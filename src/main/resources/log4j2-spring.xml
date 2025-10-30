@@ -7,7 +7,17 @@
     </Appenders>
 
     <Loggers>
-        <Logger name="com.eventpro.OrganizerService" level="info" additivity="false">
+		<Logger name="org.hibernate.SQL" level="debug" additivity="false">
+		    <AppenderRef ref="Console"/>
+		</Logger>
+		
+        <Logger name="org.hibernate" level="off" additivity="false" />
+        <Logger name="com.zaxxer.hikari" level="off"/>
+        <Logger name="org.apache.coyote.http11" level="off" additivity="false"/>
+        <Logger name="org.postgresql" level="off" additivity="false"/>
+        
+        
+        <Logger name="com.eventpro" level="debug" additivity="false">
             <AppenderRef ref="Console" />
         </Logger>
 
