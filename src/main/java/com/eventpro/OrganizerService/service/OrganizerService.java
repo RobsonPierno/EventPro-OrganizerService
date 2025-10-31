@@ -10,5 +10,7 @@ public interface OrganizerService {
 	
 	public OrganizerDTO findById(final Integer id);
 	
-	public List<OrganizerDTO> findAll();
+	public List<OrganizerDTO> findAll(final String status);
+
+	public OrganizerDTO changeStatus(final Integer id);
 }
