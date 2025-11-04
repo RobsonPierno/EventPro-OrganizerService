@@ -1,4 +1,4 @@
-package com.eventpro.OrganizerService.dto;
+package com.eventpro.OrganizerService.client;
 
 import java.util.List;
 
@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
+
+import com.eventpro.OrganizerService.dto.OrganizerDTO;
 
 @FeignClient(name = "organizer-service", url = "http://organizer:8080", path = "/organizer")
 public interface OrganizerClient {
