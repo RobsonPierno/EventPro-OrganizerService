@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.eventpro.OrganizerService.dto.OrganizerDTO;
 import com.eventpro.OrganizerService.enums.StatusEnum;
+import com.eventpro.OrganizerService.exception.OrganizerNotFoundException;
 import com.eventpro.OrganizerService.model.Organizer;
 import com.eventpro.OrganizerService.repository.OrganizerRepository;
 import com.eventpro.OrganizerService.service.OrganizerService;
@@ -43,7 +44,7 @@ public class OrganizerServiceImpl implements OrganizerService {
 		
 		OrganizerDTO dto = this.repository.findById(id)
 											.map(e -> this.mapper.toDto(e))
-											.orElseThrow(RuntimeException::new);
+											.orElseThrow(() -> new OrganizerNotFoundException("It was nor possible to find the Organizer with ID "+ id));
 		return dto;
 	}
 
